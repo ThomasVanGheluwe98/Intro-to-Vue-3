@@ -17,7 +17,7 @@ app.component('product-display', {
         <p v-else>Out of Stock</p>
         <p>Shipping: {{shipping}}</p>
 
-        
+        <product-details :details="details"></product-details>
 
         <div 
           v-for="(variant, index) in variants" 
@@ -36,6 +36,7 @@ app.component('product-display', {
     return {
       product: 'Socks',
       brand: 'Vue Mastery',
+      details: ['50% cotton', '30% wool', '20% polyester'],
       selectedVariant: 0,
       variants: [
         {
